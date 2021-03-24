@@ -1,0 +1,8 @@
+create table cboard(
+    -> number int NOT NULL auto_increment,
+    -> subject varchar(200) not null,
+    -> contents text,
+    -> created datetime not null,
+    -> writer varchar(50) not null,
+    -> primary key(number),
+    -> foreign key(writer) references member(id));
