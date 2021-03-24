@@ -18,7 +18,7 @@ if(id == null || id.equals("")){
 }
 
 Connection conn = null;
-Statement stmt = null;
+PreparedStatement stmt = null;
 ResultSet rs = null;
 
 String number = request.getParameter("number");
