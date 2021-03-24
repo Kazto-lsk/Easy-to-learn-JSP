@@ -16,7 +16,7 @@ int num=0; String writer=""; String subject=""; String contents="";
 
 String number = request.getParameter("number");
 try{
-	Class.forName("com.mysql.jdbc.Driver");
+	Class.forName("org.mariadb.jdbc.Driver");
 	conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb?&useSSL=false","jspuser","jsppass");
 	
 	stmt = conn.createStatement();

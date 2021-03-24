@@ -19,8 +19,8 @@ String contents = request.getParameter("contents");
 String password = request.getParameter("password");
 
 try{
-	Class.forName("com.mysql.jdbc.Driver");
-	conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb","jspuser","jsppass");
+	Class.forName("org.mariadb.jdbc.Driver");
+	conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/lsk","root","ysc");
 	
 	String sql = "insert into board(writer, subject, contents, password, created) values(?,?,?,?,now())";
 	pstmt = conn.prepareStatement(sql);

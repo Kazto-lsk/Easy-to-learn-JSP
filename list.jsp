@@ -14,7 +14,7 @@ Statement stmt = null;
 ResultSet rs = null;
 try{
 	Class.forName("com.mysql.jdbc.Driver");
-	conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb?&useSSL=false","jspuser","jsppass");
+	conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/lsk","root","ysc");
 	
 	stmt = conn.createStatement();
 	rs = stmt.executeQuery("select number, writer, subject, created from board");

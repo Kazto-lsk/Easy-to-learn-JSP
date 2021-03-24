@@ -22,8 +22,8 @@ String contents = request.getParameter("contents");
 String input_password = request.getParameter("password");
 
 try{
-	Class.forName("com.mysql.jdbc.Driver");
-	conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb?&useSSL=false","jspuser","jsppass");
+	Class.forName("org.mariadb.jdbc.Driver");
+	conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/lsk","root","ysc");
 	
 	stmt = conn.createStatement();
 	rs = stmt.executeQuery("select password from board where number="+number);
