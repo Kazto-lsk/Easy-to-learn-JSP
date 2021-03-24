@@ -9,6 +9,14 @@
 </head>
 <body>
 <%
+//세션 정보중 Attribute가 ID인 값을 가져옵니다.
+String id = (String)session.getAttribute("id");
+
+//만약 로그인 정보가 없다면 로그인 폼으로 이동시킵니다.
+if(id == null || id.equals("")){
+	response.sendRedirect("login/loginform.jsp");
+}
+
 Connection conn = null;
 Statement stmt = null;
 ResultSet rs = null;
