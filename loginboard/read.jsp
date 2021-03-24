@@ -27,6 +27,8 @@ try{
 	Class.forName("org.mariadb.jdbc.Driver");
 	conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/lsk","root","ysc");
 	
+	String sql = "select number, subject, contents, created, id, name from cboard,member where number = ? and writer = id";
+	
 	stmt = conn.createStatement();
 	rs = stmt.executeQuery("select * from board where number = "+number);
 	
