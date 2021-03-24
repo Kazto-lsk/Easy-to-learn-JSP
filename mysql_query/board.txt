@@ -1,0 +1,9 @@
+create table board(
+number int NOT NULL auto_increment,
+writer varchar(32) NOT NULL,
+subject varchar(200) NOT NULL,
+contents textm
+created datetime NOT NULL,
+password varchar(50) NOT NULL,
+PRIMARY KEY(number)
+);
