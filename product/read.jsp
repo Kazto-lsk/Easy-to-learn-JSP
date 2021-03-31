@@ -26,7 +26,7 @@ try{
     String pname = rs.getString("pname");
     String pdesc = rs.getString("pdesc");
     
-    int price = rs.getInt("price);
+    int price = rs.getInt("price");
     
     out.println("번호 : "+p_id+"<br>");
     out.println("상품명 : "+pname+"<br>");
