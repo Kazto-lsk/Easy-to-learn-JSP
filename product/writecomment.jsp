@@ -34,9 +34,8 @@ try{
 }catch(Exception e){
   System.out.println(e.getMessage());
 }finally{
-  if(rs!=null) rs.close();
-  if(smtmt!=null) smtmt.close();
-  if(conn!=null) conn.close();
+  if(pstmt!=null) smtmt.close();
+  if(pstmt!=null) conn.close();
  }
  %>
   
