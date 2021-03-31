@@ -38,10 +38,5 @@ try{
   if(pstmt!=null) conn.close();
  }
  %>
-  
- <hr>
-  <jsp:include page"clist.jsp" flush="false">
-      <jsp:param name="pid" value="<%=pid%>" />
-  </jsp:include>
  
   </body></html>
