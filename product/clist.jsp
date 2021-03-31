@@ -17,19 +17,15 @@ try{
   conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/lsk","root","ysc");
   
   stmt = conn.createStatement();
-  rs = stmt.executeQuery("select * from product where p_id='"+pid+"' ");
+  rs = stmt.executeQuery("select * from pcomment where p_id = '"+pid+"' ");
   
   if(rs.next()){
     String p_id = rs.getString("p_id");
-    String pname = rs.getString("pname");
-    String pdesc = rs.getString("pdesc");
+    String contents = rs.getString("contents");
+    String starpoint = rs.getString("starpoint");
     
-    int price = rs.getInt("price");
-    
-    out.println("번호 : "+p_id+"<br>");
-    out.println("상품명 : "+pname+"<br>");
-    out.println("상품 설명 : "+pdesc+"<br>");
-    out.println("가격 : "+price+"<br>");
+    out.println(u_id+","+contents+","+starpoint+"<br>");
+
     }
 }catch(Exception e){
   System.out.println(e.getMessage());
