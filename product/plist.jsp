@@ -27,7 +27,8 @@ try{
     String pname = rs.getString("pname");
     float point = rs.getFloat("sp");
     
-    out.println(p_id+","+pname+","+point+"<br>");
+    String new_pname = "<a href=read.jsp?p_id=+p_id+">"+pname+"</a>";
+    out.println(p_id+","+new_pname+","+point+"<br>");
     }
     
 }catch(Exception e){
