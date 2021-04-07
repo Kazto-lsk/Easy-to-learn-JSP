@@ -14,7 +14,10 @@ Statement stmt = null;
 ResultSet rs = null;
 
 try{
+  //Class.forName("com.mysql.jdbc.Driver");	
   Class.forName("org.mariadb.jdbc.Driver");
+  
+//conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lsk","root","ysc");
 	conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/lsk","root","ysc");
   
   stmt = conn.createStatement();
