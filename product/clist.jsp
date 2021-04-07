@@ -30,12 +30,15 @@ try{
   rs = stmt.executeQuery("select * from pcomment where p_id = '"+pid+"' ");
   
   if(rs.next()){
+	String c_id = rs.getString("c_id");
     String p_id = rs.getString("p_id");
+    String u_id = rs.getString("u_id");
     String contents = rs.getString("contents");
     String starpoint = rs.getString("starpoint");
     
-    
     out.println(p_id+","+contents+","+starpoint+"<br>");
+    out.println(p_id+","+u_id+","+contents+","+starpoint);
+    out.println("<a href=c_delete.jsp?cid="+c_id+"&pid="+p_id+">Delete</a>");
 
     }
 }catch(Exception e){

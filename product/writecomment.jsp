@@ -7,13 +7,26 @@
 <title>List Page</title>
 </head>
 <body>
+
+<%
+	String uid = (String)session.getAttribute("id");
+	if(uid == null || uid.equals("")){
+		response.sendRedirect("login/loginform.jsp");
+	}
+
+%>
+
+
 <%
 Connection conn = null;
 PreparedStatement pstmt = null;
 
 request.setCharacterEncoding("utf-8");
 String pid = request.getParameter("pid");
-String uid = request.getParameter("uid");
+
+//상단에서 사용하기 때문에 사용하지 않습니다.
+//String uid = request.getParameter("uid");
+
 String contents = request.getParameter("contents");
 String star = request.getParameter("star");
 
@@ -25,7 +38,7 @@ try{
   
   String sql = "insert into pcomment(p_id, u_id, contents, starpoint, created) values(?,?,?,?,now())";
   pstmt = conn.prepareStatement(sql);
-  pstmt.setString(1,pid);
+  pstmt.setString(1, pid);
   pstmt.setString(2, uid);
   pstmt.setString(3, contents);
   pstmt.setString(4, star);
