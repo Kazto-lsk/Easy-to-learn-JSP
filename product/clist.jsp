@@ -39,6 +39,7 @@ try{
     out.println(p_id+","+contents+","+starpoint+"<br>");
     out.println(p_id+","+u_id+","+contents+","+starpoint);
     out.println("<a href=c_delete.jsp?cid="+c_id+"&pid="+p_id+">Delete</a>");
+    out.println("<a href=c_edit.jsp?cid="+c_id+"&pid="+p_id+">Edit</a>");
 
     }
 }catch(Exception e){
