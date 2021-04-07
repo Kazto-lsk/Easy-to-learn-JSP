@@ -37,13 +37,13 @@ try{
   System.out.println(e.getMessage());
 }finally{
   if(rs!=null) rs.close();
-  if(smtmt!=null) smtmt.close();
+  if(stmt!=null) stmt.close();
   if(conn!=null) conn.close();
  }
  %>
   
  <hr>
-  <jsp:include page"clist.jsp" flush="false">
+  <jsp:include page="clist.jsp" flush="false">
       <jsp:param name="pid" value="<%=pid%>" />
   </jsp:include>
  

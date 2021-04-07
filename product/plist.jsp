@@ -18,7 +18,7 @@ try{
 	conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/lsk","root","ysc");
   
   stmt = conn.createStatement();
-  String sql = "select p_id,p_name,(Select avg(starpoint) from pcomment where pcomment.p_id = product.p_id) AS sp from product";
+  String sql = "select p_id,pname,(Select avg(starpoint) from pcomment where pcomment.p_id = product.p_id) AS sp from product";
   
   rs = stmt.executeQuery(sql);
   
@@ -36,7 +36,7 @@ try{
   
 }finally{
   if(rs!=null) rs.close();
-  if(smtmt!=null) smtmt.close();
+  if(stmt!=null) stmt.close();
   if(conn!=null) conn.close();
  }
  %>

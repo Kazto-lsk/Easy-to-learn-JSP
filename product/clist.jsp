@@ -24,14 +24,15 @@ try{
     String contents = rs.getString("contents");
     String starpoint = rs.getString("starpoint");
     
-    out.println(u_id+","+contents+","+starpoint+"<br>");
+    
+    out.println(p_id+","+contents+","+starpoint+"<br>");
 
     }
 }catch(Exception e){
   System.out.println(e.getMessage());
 }finally{
   if(rs!=null) rs.close();
-  if(smtmt!=null) smtmt.close();
+  if(stmt!=null) stmt.close();
   if(conn!=null) conn.close();
  }
  %>
