@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 
+<%
+	boolean islogin = false;
+	String uid = (String)session.getAttribute("id");
+	if(uid != null && !uid.equals("")) islogin = true;
+
+%>
+
 <html>
 <head>
 <meta charset="UTF-8">
@@ -42,7 +49,7 @@ try{
   
  <form action="writecomment.jsp" method="post">
    <input type="hidden" name="pid" value="<%=pid%>" >
-   작성자 ID : <input type="text" name="uid"><br>
+   <!-- 작성자 ID : <input type="text" name="uid"><br> -->
    
    <textarea rows="5" cols="50" name="contents"> </textarea><br>
    별점 <select name="star">
@@ -52,7 +59,15 @@ try{
     <option>4</option>
     <option>5</option>
    </select>
+  <%
+  if(islogin) out.println("<input type='submit' value='등록하기'>"); 
+  %>
   </form>
+  <%
+  if(islogin) out.println("<a href='login/logout.jsp'>로그아웃</a>");
+  else out.println("<a href='login/loginform.jsp'>로그인</a>");
+  
+  %>
    
   
   

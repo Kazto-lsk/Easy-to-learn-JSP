@@ -27,7 +27,7 @@ try{
   if(rs.next()){
     String p_id = rs.getString("p_id");
     String pname = rs.getString("pname");
-    String pdesc = rs.getString("pdesc");
+    String pdesc = rs.getString("pdesd");
     
     int price = rs.getInt("price");
     
