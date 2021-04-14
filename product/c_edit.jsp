@@ -30,7 +30,7 @@ try{
 	//Class.forName("com.mysql.jdbc.Driver");
   Class.forName("org.mariadb.jdbc.Driver");
   //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lsk","root","ysc");
-  conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/lsk","root","ysc");
+  conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/lsk","lsk","ysc");
   
   stmt = conn.createStatement();
   rs = stmt.executeQuery("Select u_id from pcomment where c_id = '"+cid+"' ");

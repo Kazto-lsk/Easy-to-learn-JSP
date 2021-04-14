@@ -18,7 +18,7 @@ try{
   Class.forName("org.mariadb.jdbc.Driver");
   
 //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lsk","root","ysc");
-	conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/lsk","root","ysc");
+	conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/lsk","lsk","ysc");
   
   stmt = conn.createStatement();
   String sql = "select p_id,pname,(Select avg(starpoint) from pcomment where pcomment.p_id = product.p_id) AS sp from product";
