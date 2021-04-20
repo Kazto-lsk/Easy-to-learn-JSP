@@ -24,7 +24,7 @@ try{
   Class.forName("org.mariadb.jdbc.Driver");
   
 //conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/lsk","root","ysc");
-  conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/lsk","lsk","ysc");
+  conn = DriverManager.getConnection("jdbc:mariadb://localhost:3306/lsk","root","ysc");
   
   stmt = conn.createStatement();
   rs = stmt.executeQuery("select * from pcomment where p_id = '"+pid+"' ");
